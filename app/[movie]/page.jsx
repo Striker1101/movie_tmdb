@@ -26,7 +26,7 @@ export default async function MovieDetails({ params }) {
       <div>
         <h2 className="text-4xl">{res.title}</h2>
         <h2 className="text-lg">{res.release_date}</h2>
-        <h2>Runtimw: {res.runtime} minutes</h2>
+        <h2>Runtime: {res.runtime} minutes</h2>
         <h2 className="bg-green-600 inline-block my-2 py-2 px-4 rounded">
           {res.status}
         </h2>
