@@ -5,7 +5,6 @@ export default async function Home() {
   );
 
   const res = await data.json();
-  console.log(res, process.env.MOVIE_API);
   return (
     <main>
       <div className="grid gap-16 grid-cols-fluid">

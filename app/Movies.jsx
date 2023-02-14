@@ -7,7 +7,8 @@ export default function Movies({ title, id, poster_path, release_date }) {
     <div>
       <h1>{title}</h1>
       <h2>{release_date}</h2>
-      <Link href={`/${id}`}>
+      {/*encodeURIComponent is used in the example to keep the path utf-8 compatible. */}
+      <Link href={`/${encodeURIComponent(id)}`}>
         <Image
           src={imagePath + poster_path}
           width={800}

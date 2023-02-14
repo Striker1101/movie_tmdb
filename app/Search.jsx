@@ -8,7 +8,7 @@ export default function Search() {
       text.current !== null &&
       text.current.value !== ""
     ) {
-      console.log(text.current.value);
+      console.log(process.env.MOVIE_API);
       const data = await fetch(
         `https://api.themoviedb.org/3/search/${text.current.value}?api_key=e54c4e2d66747e6a91716132f0f5f964&page=1`
       );
