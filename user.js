@@ -1,8 +1,8 @@
-export const User = [
+const User = [
   {
-    user: "john",
+    username: "john",
     password: "1234",
     email: "john@gmail.com",
   },
 ];
-console.log(User);
+export default User;

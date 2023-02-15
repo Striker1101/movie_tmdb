@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { User } from "@/pages/user";
+import { User } from "@/user";
 export default function handler(req, res) {
   const id = uuidv4();
   const { username, email, password } = req.body;

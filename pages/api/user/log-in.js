@@ -1,4 +1,5 @@
-import { User } from "@/pages/user";
+import User from "../../../user";
+
 export default function handler(req, res) {
   const { email, password } = req.body;
   switch (req.method) {

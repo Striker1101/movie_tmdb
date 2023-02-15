@@ -1,5 +1,4 @@
 "use client";
-
 export default function page() {
   //   throw new Error(" failed to load data");
   const handleSubmit = async (e) => {
@@ -34,7 +33,7 @@ export default function page() {
     // Get the response data from server as JSON.
     // If server returns the name submitted, that means the form works.
     const result = await response.json();
-    console.log(result.status);
+    console.log(result);
     // alert(`Is this your full name: ${result.data}`);
   };
   return (
