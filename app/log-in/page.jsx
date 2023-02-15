@@ -1,23 +1,22 @@
 "use client";
 
-import { useState } from "react";
-
 export default function page() {
   //   throw new Error(" failed to load data");
-  function handleChange(event) {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-    setQuery({ [name]: value });
-  }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    Object.entries(query).forEach(([key, value]) => {
-      formData.append(key, value);
-    });
+    // const formData = new FormData();
+    // Object.entries(query).forEach(([key, value]) => {
+    //   formData.append(key, value);
+    // });
+    const data = {
+      email: e.target.email.value,
+      password: e.target.password.value,
+    };
+    console.log(data);
 
-    const endpoint = "/api/user/sign-in";
+    const JSONdata = JSON.stringify(data);
+
+    const endpoint = "/api/user/log-in";
     const options = {
       // The method is POST because we are sending data.
       method: "POST",
@@ -26,7 +25,7 @@ export default function page() {
         "Content-Type": "application/json",
       },
       // Body of the request is the JSON data we created above.
-      body: FormData,
+      body: JSONdata,
     };
 
     // Send the form data to our forms API on Vercel and get a response.
@@ -35,7 +34,8 @@ export default function page() {
     // Get the response data from server as JSON.
     // If server returns the name submitted, that means the form works.
     const result = await response.json();
-    alert(`Is this your full name: ${result.data}`);
+    console.log(result.status);
+    // alert(`Is this your full name: ${result.data}`);
   };
   return (
     <div className="flex justify-center items-center h-screen">
@@ -46,26 +46,13 @@ export default function page() {
         id="ajaxForm"
         onSubmit={handleSubmit}
       >
-        <label htmlFor="username">
-          USERNAME:
-          <input
-            onChange={handleChange}
-            type="username"
-            required
-            name="username"
-            value={query.username}
-            id="username"
-          />
+        <label htmlFor="email">
+          EMAIL:
+          <input type="email" required name="email" id="email" />
         </label>
         <label htmlFor="password">
           PASSWORD:
-          <input
-            onChange={handleChange}
-            type="password"
-            name="pasword"
-            value={query.password}
-            id="password"
-          />
+          <input type="password" name="password" id="password" />
         </label>
         <input
           className="p-0.5 w-fit bg-blue-400 text-white-400 rounded shadow"
