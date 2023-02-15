@@ -11,7 +11,6 @@ export default function page() {
       email: e.target.email.value,
       password: e.target.password.value,
     };
-    console.log(data);
 
     const JSONdata = JSON.stringify(data);
 
