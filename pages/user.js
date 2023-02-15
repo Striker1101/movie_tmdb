@@ -1,3 +1,2 @@
-const User = [];
+export const User = [];
 console.log(User);
-export default User;
