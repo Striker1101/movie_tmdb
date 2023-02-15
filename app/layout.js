@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
             <Link href={"/log-in"}>
               <li>log in</li>
             </Link>
-            <Link href={"/log-out"}>
+            <Link href={"/log"}>
               <li>Sign up</li>
             </Link>
           </ul>
