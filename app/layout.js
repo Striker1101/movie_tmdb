@@ -21,7 +21,9 @@ export default function RootLayout({ children }) {
 
       <head />
       {/* pend all google font to the parent class and it would apply for each class */}
-      <body className={`${montserrat.className} mx-30 my-0`}>
+      <body
+        className={`${montserrat.className} mx-50 my-30 scrollbar scrollbar-w-3.5 scrollbar-thumb-h-px scrollbar-thumb-rounded-md  scrollbar-thumb-gray-500 scrollbar-track-gray-200`}
+      >
         <nav className="flex my-5 justify-evenly">
           <Link href={"/"}>
             <Image src="/logo.svg" height={30} width={30} alt="logo" />

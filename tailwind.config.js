@@ -48,5 +48,5 @@ module.exports = {
       backgroundColor: ["active"],
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
 };
